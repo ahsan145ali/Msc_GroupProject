@@ -1,19 +1,16 @@
-import './App.css';
+
 import Web3 from "web3";
 import Auction from './truffle_abis/Auction.json';
-import { Component, useEffect , useState } from 'react';
-/*
-class App extends Component {
+import { Component} from 'react';
+import { connect } from "react-redux";
+import Main from "./Components/Main";
+class App extends Component{
 
-  // Load web3 
-
-  async UNSAFE_componentWillMount()
-  {
+  async UNSAFE_componentWillMount(){
     await this.LoadWeb3();
     await this.LoadBlockChain();
   }
-
-  async LoadWeb3(){
+    LoadWeb3 = async()=>{
     if(window.ethereum)
     {
       window.web3 = new Web3(window.ethereum);
@@ -27,106 +24,85 @@ class App extends Component {
       window.alert('No Wallet Detected');
     }
   }
-  async LoadBlockChain(){
+
+   LoadBlockChain=async()=>{
+     
     const web3 = window.web3
     const account = await web3.eth.getAccounts(); // getting account that is connected
-    //this.setState({connected_account:account});
+   
+    this.setState({connected_account:account}); // set current metamask account to state
+    this.props.Redux_setConnectedAccount("setConnectedAccount",account); // save to Redux
 
     //Ganache Network ID
     const networkID = await web3.eth.net.getId();
 
     //Loading Contract
     const ContractData = Auction.networks[networkID];
-
+    
     if(ContractData){
-      console.log("HERE");
-      const cont = new web3.eth.Contract(Auction.abi,ContractData.address);
-     
-      const va = await cont.methods.GetVal().call();
-      console.log("VAL: " + va);
+      const cont_addr = new web3.eth.Contract(Auction.abi,ContractData.address);
+      this.setState(this.state.auction_contract=cont_addr); // get contract and store it to state
+      this.props.Redux_setContract("setAuctionContract",cont_addr); // save to Redux
+      this.GetAuctionOwner(); // get the address of the account that deployed the contract
+      this.setState({loading : false});
     }
     else
     {
-      console.log("Nod Data");
+      console.log("NoData");
     }
   }
 
-  // states
+   GetAuctionOwner = async ()=>
+  {
+    
+    const addr = await this.state.auction_contract.methods.GetOwner().call(); // get address from contract
+    this.setState({auction_owner:addr}); // set owner address to state
+    this.props.Redux_setOwner("setAuctionOwner",addr); // save to redux
+    
+    
+  }
+
   constructor(props){
     super(props)
-    this.state ={
-
+    this.state={
+      auction_owner : '0x00',
+      auction_contract:{},
+      connected_account:'0x00',
+      loading:true
+      
     };
   }
-  // React Part
   render(){
-    return (
+    let content
+    {
+      this.state.loading ?content = <h1>Wait Please , Loading Data.... </h1>
+      :
+      content=
       <div>
-        <p>Test</p>
-      </div>
-    );
-  }
-  
-}*/
-
-function App(){
-  useEffect(()=>{
-
-    //await this.LoadWeb3();
-    async function LoadWeb3(){
-      if(window.ethereum)
-      {
-        window.web3 = new Web3(window.ethereum);
-        await window.ethereum.enable();
-      }
-      else if(window.web3)
-      {
-        window.web3 = new Web3 (window.web3.currentProvider)
-      }
-      else{
-        window.alert('No Wallet Detected');
-      }
+        <Main/>
+        </div>
     }
-    async function LoadBlockChain(){
-      const web3 = window.web3
-      const account = await web3.eth.getAccounts(); // getting account that is connected
-      setstates(states.accounts = account);
-  
-      //Ganache Network ID
-      const networkID = await web3.eth.net.getId();
-  
-      //Loading Contract
-      const ContractData = Auction.networks[networkID];
-  
-      if(ContractData){
-        const cont = new web3.eth.Contract(Auction.abi,ContractData.address);
-        setstates(states.auction_contract = cont);
-      }
-      else
-      {
-        console.log("No Data");
-      }
-    }
-    LoadWeb3();
-    LoadBlockChain();
-  
-  },[])
-  const [states,setstates] = useState({
-    current_connected_account : '0x00', // current metamask conencted account
-    auction_owner:'0x00', // owner of the item
-    auction_contract: {}, // auction contract
-    bid_placed:0, // current bid placed
-    prev_addr:'0x0000000000000',// address of previous highest bidder
-    curr_addr:'0x0000000000000', // adddress of current highest bidder
-    prev_amount:'0',// previous highest bid amount
-    curr_amount:'0',// current highest bid amount
-    loading : true, // to use for when waiting for a process to complete
-  })
   return(
     <div>
-      Auction Dapp
+      {content}
     </div>
+    
   );
+  }
 }
 
-export default App;
+const mapStatetoProps=(props)=>{
+     return{
+        owner_acc_store : props.auction_owner, // get state from redux
+        connected_acc_store:props.connected_account
+     }
+}
+const mapPropstoState =(dispatch)=>{
+    return{
+        Redux_setOwner :(type,obj)=>dispatch({type,obj}), // set state in redux
+        Redux_setContract :(type,obj)=>dispatch({type,obj}), // set state in redux
+        Redux_setConnectedAccount :(type,obj)=>dispatch({type,obj}) // set state in redux
+    }
+}
+export default connect(mapStatetoProps,mapPropstoState)(App);
+

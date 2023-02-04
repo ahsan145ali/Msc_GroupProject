@@ -9,8 +9,12 @@ contract Auction
    
     constructor()
     {
-        
+        AuctionOwner = msg.sender;
     }
 
+    function GetOwner() external view returns(address)
+    {
+        return AuctionOwner;
+    }
 
 }
