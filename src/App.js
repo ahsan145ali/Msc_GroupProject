@@ -75,7 +75,7 @@ class App extends Component{
   render(){
     let content
     {
-      this.state.loading ?content = <h1>Wait Please , Loading Data.... </h1>
+      this.state.loading ?content = <h1>Wait Please , Loading Data... </h1>
       :
       content=
       <div>
