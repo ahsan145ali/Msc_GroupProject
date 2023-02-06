@@ -4,12 +4,18 @@ import Auction from './truffle_abis/Auction.json';
 import { Component} from 'react';
 import { connect } from "react-redux";
 import Main from "./Components/Main";
+import { BrowserRouter as Router, Routes, Route , Navigate  } from 'react-router-dom';
+import Auctioneer from "./Components/Auctioneer/Auctioneer";
+import Owner from "./Components/Owner/Owner";
+import RegisterAuctioneer from "./Components/Auctioneer/RegisterAuctioneer";
+import Bidder from "./Components/Bidder/Bidder";
 class App extends Component{
 
   async UNSAFE_componentWillMount(){
     await this.LoadWeb3();
     await this.LoadBlockChain();
   }
+  
     LoadWeb3 = async()=>{
     if(window.ethereum)
     {
@@ -78,9 +84,17 @@ class App extends Component{
       this.state.loading ?content = <h1>Wait Please , Loading Data... </h1>
       :
       content=
-      <div>
-        <Main/>
-        </div>
+      <Router>
+          <div>
+            <Routes>
+              <Route exact path ="/" element={<Main/>}></Route>
+              <Route exact path ="/RegisterAuctioneer" element={<RegisterAuctioneer/>}></Route>
+              <Route exact path ="/Auctioneer" element={<Auctioneer/>}></Route>
+              <Route exact path ="/Owner" element={<Owner/>}></Route>
+              <Route exact path ="/Bidder" element={<Bidder/>}></Route>
+            </Routes>
+          </div>
+        </Router>
     }
   return(
     <div>
