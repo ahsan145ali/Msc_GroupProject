@@ -17,7 +17,7 @@ contract Auction
     mapping(address=>uint) bidders; // address of biders which map to the amount of bid placed
     mapping(address=>uint) Pending_returns; // address of all bidders that were outbidded and are eligible for a return amount
     
-
+ address[] public RegisteredAuctioneersAddresses;
     mapping(address=>Item[]) public BidItems; // store BidItems
     mapping(address=>bool) public RegisteredAuctioneers; // register as an auctioneer
     
@@ -30,6 +30,11 @@ contract Auction
        
        require(RegisteredAuctioneers[msg.sender] == true , 'Not Registered as auctioneer');
        _;
+    }
+        modifier isOwner()
+    {
+        require(msg.sender == AuctionOwner, 'Not the Owner');
+        _;
     }
     constructor()
     {
@@ -61,4 +66,12 @@ contract Auction
         return RegisteredAuctioneers[_addr];
     }
 
+    function GetAddressesCount() public view isOwner returns(uint)
+    {
+        return RegisteredAuctioneersAddresses.length;
+    }
+    function GetRegisteredAddresses(uint index) public view isOwner returns(address)
+    {
+        return RegisteredAuctioneersAddresses[index];
+    }
 }
