@@ -97,26 +97,6 @@
       "constant": true
     },
     {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "name": "RegisteredAuctioneersAddresses",
-      "outputs": [
-        {
-          "internalType": "address",
-          "name": "",
-          "type": "address"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function",
-      "constant": true
-    },
-    {
       "inputs": [],
       "name": "RegisterAsAuctioneer",
       "outputs": [],
@@ -294,11 +274,9 @@
                         "src": "73:2:1",
                         "type": "",
                         "value": "64"
-                        "value": "64"
                       }
                     ],
                     "functionName": {
-                      "name": "mload",
                       "name": "mload",
                       "nodeType": "YulIdentifier",
                       "src": "67:5:1"
@@ -309,7 +287,6 @@
                   "variableNames": [
                     {
                       "name": "memPtr",
-                      "name": "memPtr",
                       "nodeType": "YulIdentifier",
                       "src": "57:6:1"
                     }
@@ -318,12 +295,9 @@
               ]
             },
             "name": "allocate_unbounded",
-            "name": "allocate_unbounded",
             "nodeType": "YulFunctionDefinition",
             "returnVariables": [
-            "returnVariables": [
               {
-                "name": "memPtr",
                 "name": "memPtr",
                 "nodeType": "YulTypedName",
                 "src": "40:6:1",
@@ -379,7 +353,6 @@
               "statements": [
                 {
                   "expression": {
-                  "expression": {
                     "arguments": [
                       {
                         "kind": "number",
@@ -397,7 +370,6 @@
                       }
                     ],
                     "functionName": {
-                      "name": "revert",
                       "name": "revert",
                       "nodeType": "YulIdentifier",
                       "src": "310:6:1"
@@ -437,7 +409,6 @@
                 }
               ]
             },
-            "name": "cleanup_t_uint256",
             "name": "cleanup_t_uint256",
             "nodeType": "YulFunctionDefinition",
             "parameters": [
@@ -548,7 +519,6 @@
               ]
             },
             "name": "validator_revert_t_uint256",
-            "name": "validator_revert_t_uint256",
             "nodeType": "YulFunctionDefinition",
             "parameters": [
               {
@@ -572,13 +542,11 @@
                     "arguments": [
                       {
                         "name": "offset",
-                        "name": "offset",
                         "nodeType": "YulIdentifier",
                         "src": "629:6:1"
                       }
                     ],
                     "functionName": {
-                      "name": "calldataload",
                       "name": "calldataload",
                       "nodeType": "YulIdentifier",
                       "src": "616:12:1"
@@ -589,7 +557,6 @@
                   "variableNames": [
                     {
                       "name": "value",
-                      "name": "value",
                       "nodeType": "YulIdentifier",
                       "src": "607:5:1"
                     }
@@ -599,7 +566,6 @@
                   "expression": {
                     "arguments": [
                       {
-                        "name": "value",
                         "name": "value",
                         "nodeType": "YulIdentifier",
                         "src": "672:5:1"
@@ -788,7 +754,6 @@
               ]
             },
             "name": "abi_decode_tuple_t_uint256",
-            "name": "abi_decode_tuple_t_uint256",
             "nodeType": "YulFunctionDefinition",
             "parameters": [
               {
@@ -799,7 +764,6 @@
               },
               {
                 "name": "dataEnd",
-                "name": "dataEnd",
                 "nodeType": "YulTypedName",
                 "src": "737:7:1",
                 "type": ""
@@ -807,7 +771,6 @@
             ],
             "returnVariables": [
               {
-                "name": "value0",
                 "name": "value0",
                 "nodeType": "YulTypedName",
                 "src": "749:6:1",
@@ -837,11 +800,9 @@
                         "src": "1102:42:1",
                         "type": "",
                         "value": "0xffffffffffffffffffffffffffffffffffffffff"
-                        "value": "0xffffffffffffffffffffffffffffffffffffffff"
                       }
                     ],
                     "functionName": {
-                      "name": "and",
                       "name": "and",
                       "nodeType": "YulIdentifier",
                       "src": "1091:3:1"
@@ -852,7 +813,6 @@
                   "variableNames": [
                     {
                       "name": "cleaned",
-                      "name": "cleaned",
                       "nodeType": "YulIdentifier",
                       "src": "1080:7:1"
                     }
@@ -860,7 +820,6 @@
                 }
               ]
             },
-            "name": "cleanup_t_uint160",
             "name": "cleanup_t_uint160",
             "nodeType": "YulFunctionDefinition",
             "parameters": [
@@ -873,7 +832,6 @@
             ],
             "returnVariables": [
               {
-                "name": "cleaned",
                 "name": "cleaned",
                 "nodeType": "YulTypedName",
                 "src": "1062:7:1",
@@ -980,7 +938,6 @@
               ]
             },
             "name": "abi_encode_t_address_to_t_address_fromStack",
-            "name": "abi_encode_t_address_to_t_address_fromStack",
             "nodeType": "YulFunctionDefinition",
             "parameters": [
               {
@@ -1082,7 +1039,6 @@
                 }
               ]
             },
-            "name": "abi_encode_tuple_t_address__to_t_address__fromStack_reversed",
             "name": "abi_encode_tuple_t_address__to_t_address__fromStack_reversed",
             "nodeType": "YulFunctionDefinition",
             "parameters": [
@@ -8858,7 +8814,6 @@
             "constant": false,
             "functionSelector": "f026e44f",
             "id": 33,
-            "id": 33,
             "mutability": "mutable",
             "name": "BidItems",
             "nameLocation": "657:8:0",
@@ -8873,13 +8828,10 @@
             },
             "typeName": {
               "id": 32,
-              "id": 32,
               "keyType": {
-                "id": 28,
                 "id": 28,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
-                "src": "631:7:0",
                 "src": "631:7:0",
                 "typeDescriptions": {
                   "typeIdentifier": "t_address",
@@ -8895,10 +8847,8 @@
               "valueType": {
                 "baseType": {
                   "id": 30,
-                  "id": 30,
                   "nodeType": "UserDefinedTypeName",
                   "pathNode": {
-                    "id": 29,
                     "id": 29,
                     "name": "Item",
                     "nodeType": "IdentifierPath",
@@ -8912,7 +8862,6 @@
                     "typeString": "struct Auction.Item"
                   }
                 },
-                "id": 31,
                 "id": 31,
                 "nodeType": "ArrayTypeName",
                 "src": "642:6:0",
@@ -8928,7 +8877,6 @@
             "constant": false,
             "functionSelector": "2e45568a",
             "id": 37,
-            "id": 37,
             "mutability": "mutable",
             "name": "RegisteredAuctioneers",
             "nameLocation": "721:21:0",
@@ -8943,9 +8891,7 @@
             },
             "typeName": {
               "id": 36,
-              "id": 36,
               "keyType": {
-                "id": 34,
                 "id": 34,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
@@ -8963,7 +8909,6 @@
               },
               "valueType": {
                 "id": 35,
-                "id": 35,
                 "name": "bool",
                 "nodeType": "ElementaryTypeName",
                 "src": "708:4:0",
@@ -8978,7 +8923,6 @@
           {
             "body": {
               "id": 50,
-              "id": 50,
               "nodeType": "Block",
               "src": "809:189:0",
               "statements": [
@@ -8991,14 +8935,12 @@
                           "typeString": "bool"
                         },
                         "id": 45,
-                        "id": 45,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
                           "baseExpression": {
-                            "id": 40,
                             "id": 40,
                             "name": "RegisteredAuctioneers",
                             "nodeType": "Identifier",
@@ -9011,10 +8953,8 @@
                             }
                           },
                           "id": 43,
-                          "id": 43,
                           "indexExpression": {
                             "expression": {
-                              "id": 41,
                               "id": 41,
                               "name": "msg",
                               "nodeType": "Identifier",
@@ -9026,7 +8966,6 @@
                                 "typeString": "msg"
                               }
                             },
-                            "id": 42,
                             "id": 42,
                             "isConstant": false,
                             "isLValue": false,
@@ -9056,7 +8995,6 @@
                         "rightExpression": {
                           "hexValue": "66616c7365",
                           "id": 44,
-                          "id": 44,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -9078,7 +9016,6 @@
                       },
                       {
                         "hexValue": "416c72656164792052656769737465726564",
-                        "id": 46,
                         "id": 46,
                         "isConstant": false,
                         "isLValue": false,
@@ -9106,7 +9043,6 @@
                         }
                       ],
                       "id": 39,
-                      "id": 39,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -9120,7 +9056,6 @@
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 47,
                     "id": 47,
                     "isConstant": false,
                     "isLValue": false,
@@ -9137,12 +9072,10 @@
                     }
                   },
                   "id": 48,
-                  "id": 48,
                   "nodeType": "ExpressionStatement",
                   "src": "873:107:0"
                 },
                 {
-                  "id": 49,
                   "id": 49,
                   "nodeType": "PlaceholderStatement",
                   "src": "990:1:0"
@@ -9150,12 +9083,10 @@
               ]
             },
             "id": 51,
-            "id": 51,
             "name": "isAlreadyRegistered",
             "nameLocation": "787:19:0",
             "nodeType": "ModifierDefinition",
             "parameters": {
-              "id": 38,
               "id": 38,
               "nodeType": "ParameterList",
               "parameters": [],
@@ -9167,7 +9098,6 @@
           },
           {
             "body": {
-              "id": 64,
               "id": 64,
               "nodeType": "Block",
               "src": "1027:204:0",
@@ -9181,14 +9111,12 @@
                           "typeString": "bool"
                         },
                         "id": 59,
-                        "id": 59,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
                           "baseExpression": {
-                            "id": 54,
                             "id": 54,
                             "name": "RegisteredAuctioneers",
                             "nodeType": "Identifier",
@@ -9201,10 +9129,8 @@
                             }
                           },
                           "id": 57,
-                          "id": 57,
                           "indexExpression": {
                             "expression": {
-                              "id": 55,
                               "id": 55,
                               "name": "msg",
                               "nodeType": "Identifier",
@@ -9216,7 +9142,6 @@
                                 "typeString": "msg"
                               }
                             },
-                            "id": 56,
                             "id": 56,
                             "isConstant": false,
                             "isLValue": false,
@@ -9246,7 +9171,6 @@
                         "rightExpression": {
                           "hexValue": "74727565",
                           "id": 58,
-                          "id": 58,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -9268,7 +9192,6 @@
                       },
                       {
                         "hexValue": "4e6f7420526567697374657265642061732061756374696f6e656572",
-                        "id": 60,
                         "id": 60,
                         "isConstant": false,
                         "isLValue": false,
@@ -9296,7 +9219,6 @@
                         }
                       ],
                       "id": 53,
-                      "id": 53,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -9310,7 +9232,6 @@
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 61,
                     "id": 61,
                     "isConstant": false,
                     "isLValue": false,
@@ -9327,12 +9248,10 @@
                     }
                   },
                   "id": 62,
-                  "id": 62,
                   "nodeType": "ExpressionStatement",
                   "src": "1097:116:0"
                 },
                 {
-                  "id": 63,
                   "id": 63,
                   "nodeType": "PlaceholderStatement",
                   "src": "1223:1:0"
@@ -9340,12 +9259,10 @@
               ]
             },
             "id": 65,
-            "id": 65,
             "name": "isRegistered",
             "nameLocation": "1012:12:0",
             "nodeType": "ModifierDefinition",
             "parameters": {
-              "id": 52,
               "id": 52,
               "nodeType": "ParameterList",
               "parameters": [],
@@ -9357,7 +9274,6 @@
           },
           {
             "body": {
-              "id": 76,
               "id": 76,
               "nodeType": "Block",
               "src": "1255:80:0",
@@ -9518,7 +9434,6 @@
                     "lValueRequested": false,
                     "leftHandSide": {
                       "id": 80,
-                      "id": 80,
                       "name": "AuctionOwner",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
@@ -9534,7 +9449,6 @@
                     "rightHandSide": {
                       "expression": {
                         "id": 81,
-                        "id": 81,
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
@@ -9545,7 +9459,6 @@
                           "typeString": "msg"
                         }
                       },
-                      "id": 82,
                       "id": 82,
                       "isConstant": false,
                       "isLValue": false,
@@ -9566,13 +9479,11 @@
                     }
                   },
                   "id": 84,
-                  "id": 84,
                   "nodeType": "ExpressionStatement",
                   "src": "1365:25:0"
                 }
               ]
             },
-            "id": 86,
             "id": 86,
             "implemented": true,
             "kind": "constructor",
@@ -9582,13 +9493,11 @@
             "nodeType": "FunctionDefinition",
             "parameters": {
               "id": 78,
-              "id": 78,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1352:2:0"
             },
             "returnParameters": {
-              "id": 79,
               "id": 79,
               "nodeType": "ParameterList",
               "parameters": [],
@@ -9609,14 +9518,12 @@
                 {
                   "expression": {
                     "id": 96,
-                    "id": 96,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "baseExpression": {
-                        "id": 91,
                         "id": 91,
                         "name": "RegisteredAuctioneers",
                         "nodeType": "Identifier",
@@ -9629,10 +9536,8 @@
                         }
                       },
                       "id": 94,
-                      "id": 94,
                       "indexExpression": {
                         "expression": {
-                          "id": 92,
                           "id": 92,
                           "name": "msg",
                           "nodeType": "Identifier",
@@ -9644,7 +9549,6 @@
                             "typeString": "msg"
                           }
                         },
-                        "id": 93,
                         "id": 93,
                         "isConstant": false,
                         "isLValue": false,
@@ -9674,7 +9578,6 @@
                     "rightHandSide": {
                       "hexValue": "74727565",
                       "id": 95,
-                      "id": 95,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -9694,7 +9597,6 @@
                       "typeString": "bool"
                     }
                   },
-                  "id": 97,
                   "id": 97,
                   "nodeType": "ExpressionStatement",
                   "src": "1509:40:0"
@@ -9789,10 +9691,8 @@
             "modifiers": [
               {
                 "id": 89,
-                "id": 89,
                 "kind": "modifierInvocation",
                 "modifierName": {
-                  "id": 88,
                   "id": 88,
                   "name": "isAlreadyRegistered",
                   "nodeType": "IdentifierPath",
@@ -9808,13 +9708,11 @@
             "nodeType": "FunctionDefinition",
             "parameters": {
               "id": 87,
-              "id": 87,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1432:2:0"
             },
             "returnParameters": {
-              "id": 90,
               "id": 90,
               "nodeType": "ParameterList",
               "parameters": [],

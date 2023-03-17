@@ -50,7 +50,6 @@ contract Auction {
         // Register as an auctioneer
         RegisteredAuctioneers[msg.sender] = true;
         RegisteredAuctioneersAddresses.push(msg.sender);
-       RegisteredAuctioneersAddresses.push(msg.sender);
     }
 
     // Registed a Bid Item
