@@ -17,7 +17,7 @@ const Owner = () => {
 
   
   useEffect(()=>{
-    getRegisteredAuctioneers()
+    getRegisteredAddresses()
   },[])
 
   const handleMainClick = ()=>
