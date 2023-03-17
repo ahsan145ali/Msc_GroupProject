@@ -11,13 +11,13 @@ const Owner = () => {
   const auction_contract = useSelector(state=>state.auction_contract);  
   const [numAddresses, setNumAddresses] = useState(null)
   const [registeredAuctioneers, setRegisteredAuctioneers] = useState([])
-  const [isAddressVisible, setIsAddressVisible] = useState(false)
-
-
 
   
+
+
   useEffect(()=>{
-    getRegisteredAddresses()
+    getRegisteredAuctioneers();
+    
   },[])
 
   const handleMainClick = ()=>
@@ -52,9 +52,8 @@ const Owner = () => {
         from:connected_acc[0]
       }).then((res) => {
         
+        registeredAuctioneers.push({addr:res });
         arr.push(res);
-        setRegisteredAuctioneers(arr)
-        setIsAddressVisible(true)
         //setRegisteredAuctioneers({ ...registeredAuctioneers }, res);
         console.log("res: " + res)
        // console.log("Arr: " + registeredAuctioneers);
@@ -76,25 +75,18 @@ const Owner = () => {
         </div>
 
         <div>
-          <button onClick={getRegisteredAddresses}>View All Auctioneers</button>
+          <button onClick={getRegisteredAddresses}>Get ADDR</button>
         </div>
-        <br />
-        {isAddressVisible ?
+        {console.log("len: " + registeredAuctioneers.length)}
+        {registeredAuctioneers.map(item => {
           <div>
-            {registeredAuctioneers && registeredAuctioneers.map((item,key) =>
-              <>
-                <button>
-                {item}
-                </button>
-                <br />
-                <br />
-              </>
-            )
-            }
-            </div>
-            :
-          <div />
-        }
+            
+    
+              {item.addr}
+        
+            
+          </div>
+        })}
         
       </>
     )
