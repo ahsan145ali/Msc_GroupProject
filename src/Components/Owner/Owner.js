@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react'
 import {useNavigate} from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import GetAddrItems from './GetAddrItems';
-import { Button } from '@material-ui/core';
-import {Grid} from "@material-ui/core";
+
 const Owner = () => {
     const navigate = useNavigate();
     const cc_account = useSelector(state=>state.connected_account)

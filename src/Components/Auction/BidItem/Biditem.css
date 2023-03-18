@@ -1,0 +1,32 @@
+.Main-Container{
+    margin-top: 20px;
+    background-color: rgba(22, 22, 22, 0.45);
+}
+
+.BID{
+    margin-top:10px;
+    padding: 10px 0px;
+    margin-left: 38%;
+}
+
+.FORM input[type = number]{
+    height: 30px;
+    border-radius: 10px;
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    text-align: center;
+
+}
+.FORM button{
+    width: 80px;
+    height: 40px;
+    border-radius: 10px;
+    color: black;
+    margin-left: 10px;
+    background-color: rgba(69, 116, 225, 0.879);
+}
+.FORM button:hover{
+    cursor: pointer;
+    background-color: rgba(80, 114, 194, 0.84);
+}

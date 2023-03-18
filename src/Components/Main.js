@@ -10,7 +10,7 @@ const Main = () => {
   }
   const handleBidderClick=()=>
   {
-    navigate('/Bidder');
+    navigate('/Auction');
   }
   const handleOwnerClick=()=>
   {

@@ -8,7 +8,7 @@ import { BrowserRouter as Router, Routes, Route , Navigate  } from 'react-router
 import Auctioneer from "./Components/Auctioneer/Auctioneer";
 import Owner from "./Components/Owner/Owner";
 import RegisterAuctioneer from "./Components/Auctioneer/RegisterAuctioneer";
-import Bidder from "./Components/Bidder/Bidder";
+import Auction_Comp from "./Components/Auction/Auction"
 class App extends Component{
 
   async UNSAFE_componentWillMount(){
@@ -91,7 +91,7 @@ class App extends Component{
               <Route exact path ="/RegisterAuctioneer" element={<RegisterAuctioneer/>}></Route>
               <Route exact path ="/Auctioneer" element={<Auctioneer/>}></Route>
               <Route exact path ="/Owner" element={<Owner/>}></Route>
-              <Route exact path ="/Bidder" element={<Bidder/>}></Route>
+              <Route exact path ="/Auction" element={<Auction_Comp/>}></Route>
             </Routes>
           </div>
         </Router>
