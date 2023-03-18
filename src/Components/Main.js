@@ -21,7 +21,7 @@ const Main = () => {
        <Navbar/>
       <h1>Main</h1>
       <button onClick={handleAuctioneerClick}>Auctioneer</button>
-      <button onClick={handleBidderClick}>Bidder</button>
+      <button onClick={handleBidderClick}>Auction</button>
       <button onClick={handleOwnerClick}>Owner</button>
     </div>
   )

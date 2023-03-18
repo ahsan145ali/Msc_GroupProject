@@ -44,6 +44,7 @@ contract Auction
    
     function RegisterAsAuctioneer()public isAlreadyRegistered { // Register as an auctioneer
         RegisteredAuctioneers[msg.sender] = true;
+        RegisteredAuctioneersAddresses.push(msg.sender);
     }
 
     // Registed a Bid Item
@@ -69,6 +70,9 @@ contract Auction
     function GetAddressesCount() public view isOwner returns(uint)
     {
         return RegisteredAuctioneersAddresses.length;
+    }
+    function GetAddresses()public view returns(address[] memory){
+        return RegisteredAuctioneersAddresses;
     }
     function GetRegisteredAddresses(uint index) public view isOwner returns(address)
     {

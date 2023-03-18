@@ -6,32 +6,6 @@ import { useSelector } from 'react-redux';
 import DisplayItems from './DisplayItems';
 import {Grid} from "@material-ui/core";
 import IPFS from '../../IPFS';
-/*
-const Items = ({ itemId, auctioneer, image, initialPrice, currentBid}) => {
- 
- 
- 
-  if (cc_account == auctioneer) {
-    return (
-      <li className='item'>
-        <img src={image} height='100px' width="100px"></img>
-        <div className='itemDetails'>
-          <span>{itemId}</span>
-          <p className='auctioneer'>{auctioneer}</p>
-          <div>
-            <p className='initialP'>{initialPrice}</p>
-            <p className='currP'>{currentBid}</p>
-          </div>
-  
-        </div>
-      </li>
-    )
-  }
-  else {
-    return null
-  }
- 
-}*/
 
 const Auctioneer = () => {
   const cc_account = useSelector(state=>state.connected_account)
@@ -47,12 +21,6 @@ const Auctioneer = () => {
   const handleRegisterItem = async()=>
     {
       setShowIPFS(true);
-     /* await auction_contract.methods.RegisterBidItem("https://dogecoin.com/assets/images/doge.svg"
-                                              ,10,0).send({
-        from:cc_account[0]
-       }).then((receipt)=>{
-          console.log("Added Success");
-       })*/
     }
 
     const GetRegisteredItems = async()=>{

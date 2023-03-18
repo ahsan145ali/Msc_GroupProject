@@ -4,7 +4,8 @@ const redux = require('redux');
 const initialState = {
     auction_owner:"0x99",
     auction_contract:{},
-    connected_account:"0x11"
+    connected_account:"0x11",
+    AuctionItems:[]
 }
 const TaskReducer = (state = initialState,action)=>
 {
@@ -24,6 +25,10 @@ const TaskReducer = (state = initialState,action)=>
 
         state.connected_account = action.obj;
         
+    }
+    else if(action.type === "setAuctionItem"){
+        console.log("CCC")
+        state.AuctionItems.push(action.obj);
     }
     return state;
 };
