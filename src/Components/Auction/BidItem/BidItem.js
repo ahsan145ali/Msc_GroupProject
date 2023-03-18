@@ -26,7 +26,10 @@ const BidItem = (props) => {
                         
                     </div>
                     <Table
-                        
+                        highestBid = {props.highestBid}
+                        highestBidder = {props.highestBidder}
+                        prevHigestBid = {props.prevHigestBid}
+                        prevHigestBidder=  {props.prevHigestBidder}
                         />
                 </div>
       

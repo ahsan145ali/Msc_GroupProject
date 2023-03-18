@@ -14,7 +14,7 @@ contract Auction
        uint highest_bid;
        address highest_Bidder;
        uint prev_higest_bid;
-       address prev_higest_bidder;
+       address prev_higest_bid;
     }
 
     address AuctionOwner; // address of auction owner
