@@ -1,4 +1,5 @@
 import React from 'react'
+import Table from '../BidTable/Table';
 import './Biditem.css';
 
 const BidItem = (props) => {
@@ -24,6 +25,9 @@ const BidItem = (props) => {
                         </form>
                         
                     </div>
+                    <Table
+                        
+                        />
                 </div>
       
     </div>

@@ -11,6 +11,10 @@ contract Auction
        uint InitialPrice;
        uint currentBid;
        address soldto_addr;
+       uint highest_bid;
+       address highest_Bidder;
+       uint prev_higest_bid;
+       address prev_higest_bidder;
     }
 
     address AuctionOwner; // address of auction owner
@@ -51,7 +55,7 @@ contract Auction
     function RegisterBidItem(string memory _item_url,uint _InitialPrice,uint _currentBid) public isRegistered {
         
         uint ItemNumber = BidItems[msg.sender].length; // get  length of current items of the auctioneer
-        BidItems[msg.sender].push(Item(ItemNumber+1,msg.sender,_item_url,_InitialPrice,_currentBid,address(0))); // set item 
+        BidItems[msg.sender].push(Item(ItemNumber+1,msg.sender,_item_url,_InitialPrice,_currentBid,address(0),0,address(0),0,address(0))); // set item 
 
     }
 
