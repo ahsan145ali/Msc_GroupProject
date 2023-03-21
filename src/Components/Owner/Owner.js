@@ -40,10 +40,10 @@ const Owner = () => {
       console.log("Items: " + AuctionItems.length)
     }
     useEffect(()=>{
-      /*if(cc_account != owner_account){
+      if(cc_account != owner_account){
         window.alert("Not the owner")
         navigate("/");
-      }*/
+      }
       GetAddressCount();
       
     },[])

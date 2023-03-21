@@ -14,7 +14,7 @@ contract Auction
        uint highest_bid;
        address highest_Bidder;
        uint prev_higest_bid;
-       address prev_higest_bid;
+       address prev_higest_bidder;
     }
 
     address AuctionOwner; // address of auction owner
@@ -40,11 +40,25 @@ contract Auction
         require(msg.sender == AuctionOwner, 'Not the Owner');
         _;
     }
+        event BidPlace(
+        address CurrentBidder,
+        uint Current_BidAmount,
+        uint Previous_BidAmount
+    );
+
+    event RecievedEth(
+        address SentFrom,
+        uint EthAmount
+    );
     constructor()
     {
         AuctionOwner = msg.sender;
     }
 
+    receive() external payable{
+        //payable(Auction_Owner).transfer(msg.value);
+        emit RecievedEth(msg.sender, msg.value);
+    }
    
     function RegisterAsAuctioneer()public isAlreadyRegistered { // Register as an auctioneer
         RegisteredAuctioneers[msg.sender] = true;
@@ -58,7 +72,49 @@ contract Auction
         BidItems[msg.sender].push(Item(ItemNumber+1,msg.sender,_item_url,_InitialPrice,_currentBid,address(0),0,address(0),0,address(0))); // set item 
 
     }
+    
+    function Bid(uint amount,address Auctioneer , uint itemID) payable public {
+        itemID = itemID-1;
 
+        //require(block.timestamp < Creation_time + 2 days,'Auction Time Ended');
+        if(amount >BidItems[Auctioneer][itemID].highest_bid){
+            
+            BidItems[Auctioneer][itemID].prev_higest_bid = BidItems[Auctioneer][itemID].highest_bid;
+            BidItems[Auctioneer][itemID].prev_higest_bidder = BidItems[Auctioneer][itemID].highest_Bidder;
+
+            BidItems[Auctioneer][itemID].highest_bid = amount;
+            BidItems[Auctioneer][itemID].highest_Bidder = msg.sender;
+
+            bidders[msg.sender] = amount;
+            
+            Pending_returns[BidItems[Auctioneer][itemID].prev_higest_bidder] += BidItems[Auctioneer][itemID].prev_higest_bid;
+     
+            emit BidPlace(BidItems[Auctioneer][itemID].highest_Bidder, BidItems[Auctioneer][itemID].highest_bid, BidItems[Auctioneer][itemID].prev_higest_bid);
+        }
+        else{
+            revert('Amount too Low');
+        }
+    }
+    function GetRefund() public payable{ 
+            uint amount =  Pending_returns[msg.sender];
+            uint contract_balance = address(this).balance;
+
+            require(msg.sender != AuctionOwner , 'Owner can not Initiate Refund');
+            require(amount > 0 , 'No Pending Returns');
+            require(amount <= contract_balance , 'Not enough Funds In Contract');
+            //require(msg.sender != highest_Bidder , 'Auction Winner Can not Claim Refund');
+
+                Pending_returns[msg.sender] = 0;
+                payable(msg.sender).transfer(amount);
+        }
+
+        /* Send the highest Bid to the Auction Owner*/
+    function TransferEthToOwner(address Auctioneer , uint itemID) public payable isOwner() {
+        itemID = itemID - 1;
+        uint256 contract_balance = address(this).balance ;
+        require(BidItems[Auctioneer][itemID].highest_bid <= contract_balance , 'Insufficient Amount in Contract');
+        payable(AuctionOwner).transfer(BidItems[Auctioneer][itemID].highest_bid);
+    }
    function GetBidItem(address _auctioneer) public view returns(Item[] memory){ // return all Items of an address
      return BidItems[_auctioneer];
     }
@@ -81,5 +137,19 @@ contract Auction
     function GetRegisteredAddresses(uint index) public view isOwner returns(address)
     {
         return RegisteredAuctioneersAddresses[index];
+    }
+    function ShowCurrentBid(address Auctioneer , uint itemID) external view  returns(address,uint){
+        return (BidItems[Auctioneer][itemID-1].highest_Bidder,BidItems[Auctioneer][itemID-1].highest_bid);
+    }
+
+    function getCurrentHighestBid(address Auctioneer , uint itemID) external view returns(address,uint){
+        return (BidItems[Auctioneer][itemID-1].highest_Bidder,BidItems[Auctioneer][itemID-1].highest_bid);
+    }
+
+    function getPrevHighestBid(address Auctioneer , uint itemID) external view returns(address,uint){
+        return (BidItems[Auctioneer][itemID-1].prev_higest_bidder,BidItems[Auctioneer][itemID-1].prev_higest_bid);
+    }
+    function getContractBalance() external view returns(uint){
+        return address(this).balance;
     }
 }

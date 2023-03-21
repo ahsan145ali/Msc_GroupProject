@@ -9,6 +9,7 @@ import Auctioneer from "./Components/Auctioneer/Auctioneer";
 import Owner from "./Components/Owner/Owner";
 import RegisterAuctioneer from "./Components/Auctioneer/RegisterAuctioneer";
 import Auction_Comp from "./Components/Auction/Auction"
+import AuctionEnd from "./Components/Auction/AuctionEnd";
 class App extends Component{
 
   async UNSAFE_componentWillMount(){
@@ -87,11 +88,12 @@ class App extends Component{
       <Router>
           <div>
             <Routes>
-              <Route exact path ="/" element={<Main/>}></Route>
+              <Route exact path ="/" element={<Main />}></Route>
               <Route exact path ="/RegisterAuctioneer" element={<RegisterAuctioneer/>}></Route>
               <Route exact path ="/Auctioneer" element={<Auctioneer/>}></Route>
               <Route exact path ="/Owner" element={<Owner/>}></Route>
               <Route exact path ="/Auction" element={<Auction_Comp/>}></Route>
+              <Route exact path ="/AuctionEnd" element={<AuctionEnd/>}></Route>
             </Routes>
           </div>
         </Router>

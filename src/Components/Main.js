@@ -1,8 +1,13 @@
 import React from 'react'
 import Navbar from "./Navbar"
 import {useNavigate} from 'react-router-dom';
+import { useSelector } from 'react-redux';
+
 const Main = () => {
+
   const navigate = useNavigate();
+
+  const AuctionStatus = useSelector(state=>state.AuctionStatus); 
 
   const handleAuctioneerClick =()=>
   {
@@ -10,12 +15,15 @@ const Main = () => {
   }
   const handleBidderClick=()=>
   {
-    navigate('/Auction');
+    if(AuctionStatus == false){
+    navigate('/Auction');}
+    else{navigate('/AuctionEnd')}
   }
   const handleOwnerClick=()=>
   {
     navigate('/Owner');
   }
+
   return (
     <div>
        <Navbar/>

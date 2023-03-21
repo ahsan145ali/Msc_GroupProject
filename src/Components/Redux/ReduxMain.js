@@ -5,7 +5,8 @@ const initialState = {
     auction_owner:"0x99",
     auction_contract:{},
     connected_account:"0x11",
-    AuctionItems:[]
+    AuctionItems:[],
+    AuctionStatus:false
 }
 const TaskReducer = (state = initialState,action)=>
 {
@@ -27,8 +28,11 @@ const TaskReducer = (state = initialState,action)=>
         
     }
     else if(action.type === "setAuctionItem"){
-        console.log("CCC")
         state.AuctionItems.push(action.obj);
+    }
+    else if(action.type === "setAuctionStatus")
+    {
+        state.AuctionStatus = action.obj;
     }
     return state;
 };
