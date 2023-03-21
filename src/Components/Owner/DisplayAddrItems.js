@@ -11,6 +11,7 @@ import './DisplayAddrItems.css';
 
 const DisplayAddrItems = ({Items}) => {
 
+  const [buttonStatus,setbuttonStatus] = useState(false);
     const dispatch = useDispatch() 
     const HandleAddItem = (item)=>
     {
@@ -18,6 +19,7 @@ const DisplayAddrItems = ({Items}) => {
         console.log(item.InitialPrice)
         console.log(item.auctioneer_addr);
         dispatch({type:"setAuctionItem",obj:item});
+        setbuttonStatus(true);
 
     }
   return (
@@ -32,7 +34,7 @@ const DisplayAddrItems = ({Items}) => {
                      <div className='ItemInfoContainer'>
                         <h3 style={{height:"1px"}}>ID: {e.itemID}</h3>
                         <h3 style={{height:"1px"}}>price: {e.InitialPrice}</h3>
-                        <button onClick={()=>HandleAddItem(e)} style={{marginTop:'5px'}}>ADD</button>
+                        <button onClick={()=>HandleAddItem(e)} style={{marginTop:'5px'}} disabled={buttonStatus}>ADD</button>
                      </div>
                 </div>
               
