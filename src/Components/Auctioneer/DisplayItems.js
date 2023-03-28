@@ -7,12 +7,12 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { CardHeader } from '@material-ui/core';
-
+import "./DisplayItems.css"
 const DisplayItems = ({item}) => {
   return (
     
     <>  
-    <Card style={{textAlign:"center", marginLeft:"10px" , marginTop:"10px" , height:"400px" , backgroundColor:"grey"}}>
+    <Card  className='CardContainer' >
         <CardHeader
         title={"Item ID: " +  (item.itemID)}
        

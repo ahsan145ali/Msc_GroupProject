@@ -50,3 +50,29 @@
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 20px;
 } 
+
+.nav_button_main{
+    float: left;
+
+    width: 50px;
+    height: 30px;
+    border-radius: 10px;
+    color: black;
+    margin-left: 10px;
+    background-color: rgba(69, 116, 225, 0.879);
+    color: white;
+}
+.nav_button_main:hover , .B_regItem:hover {
+    cursor: pointer;
+    background-color: rgba(80, 114, 194, 0.84);
+}
+.B_regItem{    
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+    color: black;
+    margin-left: 10px;
+    background-color: rgba(69, 116, 225, 0.879);
+    color: white;
+    
+}

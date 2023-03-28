@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import {useNavigate} from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import GetAddrItems from './GetAddrItems';
+import "./Owner.css";
 
 const Owner = () => {
     const navigate = useNavigate();
@@ -61,9 +62,9 @@ const Owner = () => {
     }
   return (
     <div>
-      <button onClick={handleMainClick}>Main</button>
+      <button onClick={handleMainClick} id="Main_Btn">Main</button>
       <h1>Owner</h1>
-      <button onClick={HandleGetAddr}>Get Addr</button>
+      <button onClick={HandleGetAddr} id="Addr_Btn">Get Addr</button>
 
       <div>
         {

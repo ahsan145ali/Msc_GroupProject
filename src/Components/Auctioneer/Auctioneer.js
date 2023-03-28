@@ -49,10 +49,11 @@ const Auctioneer = () => {
    },[])
   return (
     <div>
+              <button onClick={handleMainClick} className="nav_button_main">Main</button>
       <Navbar/>
-        <button onClick={handleMainClick}>Main</button>
+
       <h2>Registered Items</h2>
-      <button onClick={handleRegisterItem}>Register Item</button>
+      <button onClick={handleRegisterItem} className="B_regItem">Register Item</button>
        {IPFS_Store}
       <Grid   container direction="row" justifyContent="flex-start" alignItems="center" spacing={20}>
           {

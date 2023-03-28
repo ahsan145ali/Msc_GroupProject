@@ -1,0 +1,36 @@
+
+body {
+    background-color: rgba(0,0,0,1);
+    font-weight:600;
+    text-align:center;
+    color: white;
+  }
+  
+  
+  .page-title {
+    opacity: .75 !important;
+  }
+  
+.Owner,.Bidder{
+   
+    background-color: rgba(80, 114, 194, 0.84);
+    
+}
+  .Owner-details{
+      display: flex;
+      justify-content: center;
+      padding: 10px 10px;
+  }
+  .Owner-details > p {
+      padding: 0 30px;
+  }
+  
+  .Bidder-details{
+    display: flex;
+    justify-content: center;
+    padding: 10px 10px;
+  }
+
+  .Bidder-details > p {
+    padding: 0 30px;
+}

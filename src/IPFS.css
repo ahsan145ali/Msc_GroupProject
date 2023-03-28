@@ -2,11 +2,18 @@
     position: fixed;
     margin-left: 30%;
     margin-top: 1%;
-    background-color: rgb(206, 206, 206);
+    background-color: rgba(80, 114, 194,0.95);
     width: 30%;
     height: 40%;
     border: 2px solid black;
     border-radius: 20px;
 }
-.MainForm{
+.FormContainer button{
+    background-color: rgba(69, 116, 225, 0.879);
+    color: white;
+}
+
+#in{
+    background-color: rgba(69, 116, 225, 0.879);
+    color: white;
 }

@@ -4,3 +4,11 @@
     margin-left: 10%;
     width: 200px;
 }
+
+.CardContainer{
+    text-align: center;
+    margin-left:10px; 
+    margin-top:10p;
+    height:400px; 
+    background-color:rgb(195, 0, 0);
+}

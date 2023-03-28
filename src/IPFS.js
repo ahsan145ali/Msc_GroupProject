@@ -101,7 +101,7 @@ const IPFS = ({hideForm, GetRegisteredItems}) => {
       <form onSubmit={handleSubmit} className="MainForm">
         <label>
           Select File
-          <input type="file" onChange={(event)=>setFile(event.target.files[0])}/>
+          <input id='in' type="file" onChange={(event)=>setFile(event.target.files[0])}/>
         </label>
         <br></br>
         {form_inputs}

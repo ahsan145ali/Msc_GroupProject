@@ -6,7 +6,7 @@ import AuctionEnd from './AuctionEnd';
 
 const Auction = () => {
   const navigate = useNavigate();
-  const TimerPerItem = 15;
+  const TimerPerItem = 20;
   const cc_account = useSelector(state=>state.connected_account)
   const owner_account = useSelector(state=>state.auction_owner)
   const auction_contract = useSelector(state=>state.auction_contract);  

@@ -41,7 +41,6 @@ const RegisterAuctioneer = () => {
     <div>
       <h1>Register Auctioneer</h1>
       <button onClick={handleRegisterClick}>Register</button>
-      <button onClick={GetRegistrationStatus}>Stauts</button>
     </div>
   )
 }

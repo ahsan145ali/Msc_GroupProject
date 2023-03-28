@@ -1,8 +1,8 @@
 .MainDiv
 {
     width: 100%;
-    height: 310px;
-    background-color: aqua;
+    height: 320px;
+    background-color: rgb(45, 45, 45,0.70);
 }
 .ItemContainer
 {
@@ -13,4 +13,16 @@
 {
     height: "1px";
     margin-bottom: 100px;
+}
+#Add_Btn{
+    background-color: rgba(80, 114, 194, 0.84);
+    color: white;
+    width: 70px;
+    height: 20px;
+    border-radius: 5px;
+}
+
+#Add_Btn:hover{
+    cursor: pointer;
+    background-color: rgba(117, 148, 218, 0.84);
 }

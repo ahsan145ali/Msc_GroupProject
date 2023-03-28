@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
 import DisplayAddrItems from './DisplayAddrItems';
+import "./GetAddrItems.css";
+
 const GetAddrItems = ({Addr}) => {
   const auction_contract = useSelector(state=>state.auction_contract);  
   const [Items,setItems] = useState([{}])
@@ -24,7 +26,7 @@ const GetAddrItems = ({Addr}) => {
   return (
     <div>
             
-          <button onClick={HandleGetRegItems}>{Addr}</button>
+          <button onClick={HandleGetRegItems} id="Addresses">{Addr}</button>
           {Show}
     </div>
   )

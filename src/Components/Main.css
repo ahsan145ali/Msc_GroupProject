@@ -1,0 +1,13 @@
+.B_Auctioneer,.B_Auction,.B_Owner{
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+    color: black;
+    margin-left: 10px;
+    background-color: rgba(69, 116, 225, 0.879);
+    color: white;
+}
+.B_Auctioneer:hover , .B_Auction:hover , .B_Owner:hover{
+    cursor: pointer;
+    background-color: rgba(80, 114, 194, 0.84);
+}
