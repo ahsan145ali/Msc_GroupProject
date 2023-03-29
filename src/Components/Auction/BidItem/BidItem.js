@@ -67,7 +67,7 @@ const BidItem = (props) => {
     <div>
 
             <div className="Main-Container">
-              <button onClick={onGetBidsHandler}>GetBIDS</button>
+              {/*<button onClick={onGetBidsHandler}>GetBIDS</button>*/}
                 <h3>Bid Item Initial Price: {props.initPrice}</h3>
                     <div className="BID">
                         <img src={props.img} width="250" height="250"/> 

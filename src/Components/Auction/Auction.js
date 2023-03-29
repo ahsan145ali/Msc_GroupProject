@@ -49,7 +49,7 @@ const Auction = () => {
 
   return (
     <div>
-      <button onClick={onContBalanceHandler}>Get Cont Balance</button>
+      {/*<button onClick={onContBalanceHandler}>Get Cont Balance</button>*/}
       
       {counter == 0? NextItem():null}
       <h1>Auction</h1>
