@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import Table from '../BidTable/Table';
-import { useSelector } from 'react-redux';
+import { useSelector , useDispatch} from 'react-redux';
 import Web3 from "web3";
 import './Biditem.css';
 
 const BidItem = (props) => {
+  const dispatch = useDispatch() 
   const auction_contract = useSelector(state=>state.auction_contract);  
   const connected_account = useSelector(state=>state.connected_account)
   const[bid_placed,setbid_placed] = useState(0);
@@ -26,6 +27,7 @@ const BidItem = (props) => {
      
   }
   const PlaceBid = async ()=>{
+    await fetch_account();
     const amount = bid_placed;
     const amount_wei = await Web3.utils.toWei(amount,'ether');
     console.log("amount: " + amount_wei);
@@ -43,6 +45,11 @@ const BidItem = (props) => {
     }
     setbid_placed(0);
   }
+  const fetch_account = async()=>{
+    const web3 = window.web3
+    const account = await web3.eth.getAccounts(); // getting account that is connected
+    dispatch({type:"setConnectedAccount",obj:account});
+   }
   const onGetBidsHandler = async()=>
   {
     const res = await auction_contract.methods.getCurrentHighestBid(props.AuctioneerAddr,props.ItemID).call();

@@ -88,7 +88,7 @@ class App extends Component{
       <Router>
           <div>
             <Routes>
-              <Route exact path ="/" element={<Main />}></Route>
+              <Route exact path ="/" element={<Main GetAuctionOwner={this.GetAuctionOwner}/>}></Route>
               <Route exact path ="/RegisterAuctioneer" element={<RegisterAuctioneer/>}></Route>
               <Route exact path ="/Auctioneer" element={<Auctioneer/>}></Route>
               <Route exact path ="/Owner" element={<Owner/>}></Route>

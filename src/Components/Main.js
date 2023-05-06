@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Navbar from "./Navbar"
 import {useNavigate} from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector , useDispatch} from 'react-redux';
 import "./Main.css"
-const Main = () => {
+const Main = ({GetAuctionOwner}) => {
 
   const navigate = useNavigate();
+  const dispatch = useDispatch() 
 
   const AuctionStatus = useSelector(state=>state.AuctionStatus); 
   const AuctionItems = useSelector(state=>state.AuctionItems); 
@@ -32,7 +33,14 @@ const Main = () => {
   {
     navigate('/Owner');
   }
-
+ useEffect(()=>{
+   const fetch_account = async()=>{
+    const web3 = window.web3
+    const account = await web3.eth.getAccounts(); // getting account that is connected
+    dispatch({type:"setConnectedAccount",obj:account});
+   }
+   fetch_account();
+ },[])
   return (
     <div >
        <Navbar/>

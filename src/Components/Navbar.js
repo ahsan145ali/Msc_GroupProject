@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import "./Navbar.css"
 const Navbar = () => {
 
   const owner = useSelector(state=>state.auction_owner)
-  const cc_account = useSelector(state=>state.connected_account)
+  let cc_account = useSelector(state=>state.connected_account)
+
+  useEffect(()=>{
+    
+  })
   return (
     <div className='M'> 
         <div className='Owner'>
